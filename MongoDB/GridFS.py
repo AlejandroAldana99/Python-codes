@@ -36,14 +36,6 @@ if fid != "":
 	print(output)
 
 
-
-
-
-
-
-
-
-
 # Construccion de la imagen
 # file = fs.find_one({"filename":filename})
 # bytedata = file.read()

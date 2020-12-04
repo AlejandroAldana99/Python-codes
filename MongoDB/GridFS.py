@@ -35,21 +35,20 @@ if fid != "":
 	output = fs.get(fid).read()
 	print(output)
 
-
 # Construccion de la imagen
-# file = fs.find_one({"filename":filename})
-# bytedata = file.read()
+file = fs.find_one({"filename":filename})
+bytedata = file.read()
 
-# # Pillow
-# # ima_IO = BytesIO(base64.b64decode(bytedata))
-# # img_PIL = Image.open(ima_IO)
-# # img_PIL.show()
+# Pillow
+ima_IO = BytesIO(base64.b64decode(bytedata))
+img_PIL = Image.open(ima_IO)
+img_PIL.show()
 
-# # CV2
-# data = np.frombuffer(base64.b64decode(bytedata), np.uint8)
-# img_CV2 = cv2.imdecode(data, 3)
-# img_CV2 = cv2.cvtColor(img_CV2, cv2.COLOR_BGR2RGB)
-# plt.imshow(img_CV2)
-# plt.show()
+# CV2
+data = np.frombuffer(base64.b64decode(bytedata), np.uint8)
+img_CV2 = cv2.imdecode(data, 3)
+img_CV2 = cv2.cvtColor(img_CV2, cv2.COLOR_BGR2RGB)
+plt.imshow(img_CV2)
+plt.show()
 
-# client.close()
+client.close()
